@@ -1,12 +1,16 @@
 package com.sheva.springSandbox;
 
+import com.sheva.springSandbox.controllers.PropertyInjectedGreetingController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class SpringSandboxApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringSandboxApplication.class, args);
+		ApplicationContext context = SpringApplication.run(SpringSandboxApplication.class, args);
+		PropertyInjectedGreetingController controller = (PropertyInjectedGreetingController) context.getBean("propertyInjectedGreetingController");
+		System.out.println(controller.greeting());
 	}
 }

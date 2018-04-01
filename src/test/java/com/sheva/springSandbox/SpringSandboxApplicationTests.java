@@ -11,6 +11,7 @@ public class SpringSandboxApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		
 	}
 
 }
