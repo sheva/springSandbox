@@ -1,6 +1,6 @@
 package com.sheva.springSandbox;
 
-import com.sheva.springSandbox.controllers.PropertyInjectedGreetingController;
+import com.sheva.springSandbox.components.PropertyInjectedGreetingComponent;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -10,7 +10,7 @@ public class SpringSandboxApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(SpringSandboxApplication.class, args);
-		PropertyInjectedGreetingController controller = (PropertyInjectedGreetingController) context.getBean("propertyInjectedGreetingController");
+		PropertyInjectedGreetingComponent controller = (PropertyInjectedGreetingComponent) context.getBean("propertyInjectedGreetingComponent");
 		System.out.println(controller.greeting());
 	}
 }
